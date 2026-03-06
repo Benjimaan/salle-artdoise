@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9A96E"/>
+      <stop offset="50%" stop-color="#D4B982"/>
+      <stop offset="100%" stop-color="#A0876C"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2C2C2C"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#bg)"/>
+  <!-- Inner subtle ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.3"/>
+  <!-- Stylised letter A -->
+  <path d="M256 108 L164 388 L192 388 L214 324 L298 324 L320 388 L348 388 Z M256 168 L286 300 L226 300 Z" fill="url(#gold)"/>
+  <!-- Small decorative diamond below the A -->
+  <path d="M256 408 L264 418 L256 428 L248 418 Z" fill="url(#gold)" opacity="0.6"/>
+</svg>
