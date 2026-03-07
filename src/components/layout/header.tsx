@@ -54,7 +54,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 lg:flex ml-12">
             <a
               href="/presentation"
               className={cn(
