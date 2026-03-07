@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art d'Oise — Présentation Projet Digital Premium | BF Studio</title>
+  <meta name="description" content="Présentation du projet de création d'un site vitrine premium pour la salle de réception Art d'Oise à Saint-Maximin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --ivory: #FDFBF7;
+      --champagne: #F5E6D3;
+      --champagne-light: #FAF0E6;
+      --cream: #F8F4EF;
+      --beige: #E8DDD3;
+      --taupe: #B8A99A;
+      --bronze: #A0876C;
+      --gold: #C9A96E;
+      --gold-light: #D4B982;
+      --anthracite: #2C2C2C;
+      --charcoal: #3A3A3A;
+      --dark: #1A1A1A;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--ivory);
+      color: var(--anthracite);
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--champagne); color: var(--dark); }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--ivory); }
+    ::-webkit-scrollbar-thumb { background: var(--taupe); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--bronze); }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    .font-serif { font-family: var(--font-serif); }
+    .font-sans { font-family: var(--font-sans); }
+
+    /* ---- Animations ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.from-left { transform: translateX(-40px); }
+    .reveal.from-right { transform: translateX(40px); }
+    .reveal.from-scale { transform: scale(0.96); }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.1s; }
+    .stagger-3 { transition-delay: 0.15s; }
+    .stagger-4 { transition-delay: 0.2s; }
+    .stagger-5 { transition-delay: 0.25s; }
+    .stagger-6 { transition-delay: 0.3s; }
+    .stagger-7 { transition-delay: 0.35s; }
+    .stagger-8 { transition-delay: 0.4s; }
+    .stagger-9 { transition-delay: 0.45s; }
+
+    /* ---- Utilities ---- */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, var(--gold), var(--bronze));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-divider {
+      width: 60px; height: 1px; margin: 0 auto;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .premium-shadow { box-shadow: 0 4px 30px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.04); }
+    .premium-shadow-lg { box-shadow: 0 10px 50px rgba(0,0,0,.08), 0 4px 15px rgba(0,0,0,.04); }
+    .premium-border { border: 1px solid rgba(200,190,175,.25); }
+
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(200,190,175,.25);
+      box-shadow: 0 4px 30px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.08);
+    }
+
+    .icon-circle {
+      width: 3.5rem; height: 3.5rem;
+      border-radius: 9999px;
+      background: var(--champagne-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon-circle i { color: var(--gold); width: 1.5rem; height: 1.5rem; }
+
+    .overtitle {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      color: var(--anthracite);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--gold); color: var(--dark);
+      font-weight: 600; font-size: 0.875rem;
+      padding: 1rem 2.5rem;
+      border-radius: 9999px; border: none;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      text-decoration: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: scale(1.04); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,.3);
+      color: #fff;
+      font-weight: 500; font-size: 0.875rem;
+      padding: 1rem 2.5rem;
+      border-radius: 9999px;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      text-decoration: none; cursor: pointer;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.5); }
+
+    /* ========================= */
+    /* HEADER */
+    /* ========================= */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+    .site-header.scrolled {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(253,251,247,.85);
+      border-bottom: 1px solid rgba(200,190,175,.2);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 4.5rem;
+    }
+    .header-logo {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--gold), var(--bronze));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .header-nav { display: flex; gap: 2rem; align-items: center; }
+    .header-nav a {
+      font-size: 0.875rem; font-weight: 500; color: var(--anthracite);
+      text-decoration: none; letter-spacing: 0.02em;
+      transition: color 0.2s ease;
+    }
+    .header-nav a:hover { color: var(--gold); }
+    .header-cta {
+      background: var(--gold); color: var(--dark);
+      font-size: 0.8rem; font-weight: 600;
+      padding: 0.6rem 1.5rem; border-radius: 9999px;
+      text-decoration: none; transition: background 0.3s ease;
+    }
+    .header-cta:hover { background: var(--gold-light); }
+
+    @media (max-width: 768px) {
+      .header-nav, .header-cta { display: none; }
+    }
+
+    /* ========================= */
+    /* 1. HERO */
+    /* ========================= */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('images/clearpix_1772783477746.png') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(26,26,26,.35) 0%, rgba(26,26,26,.2) 40%, rgba(26,26,26,.55) 100%);
+    }
+    .hero-label {
+      position: absolute; top: 2rem; left: 50%; transform: translateX(-50%); z-index: 10;
+      font-size: 0.7rem; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.3em; color: var(--gold);
+    }
+    .hero-content {
+      position: relative; z-index: 10;
+      text-align: center; padding: 0 1.5rem; max-width: 64rem;
+    }
+    .hero-line {
+      width: 4rem; height: 1px; margin: 0 auto 2rem;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .hero h1 {
+      font-family: var(--font-serif); color: #fff; line-height: 1.1; margin-bottom: 2rem;
+    }
+    .hero h1 .main-title {
+      display: block;
+      font-size: clamp(3rem, 8vw, 6rem);
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .sub-title {
+      display: block; margin-top: 1rem;
+      font-size: clamp(1.2rem, 3vw, 2.25rem);
+      color: rgba(250,240,230,.9);
+      font-weight: 300; max-width: 56rem; margin-left: auto; margin-right: auto;
+      line-height: 1.4;
+    }
+    .hero-desc {
+      font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+      color: rgba(250,240,230,.65);
+      max-width: 48rem; margin: 0 auto 3rem; line-height: 1.7;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .scroll-indicator {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    }
+    .scroll-indicator span {
+      font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(255,255,255,.35);
+    }
+    .scroll-indicator i { color: rgba(255,255,255,.35); animation: bounce 2s infinite; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* ========================= */
+    /* 2. CONTEXT / VISION */
+    /* ========================= */
+    .section-vision { background: var(--ivory); padding: 7rem 0; }
+    .vision-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) { .vision-grid { grid-template-columns: 1fr; } }
+
+    /* ========================= */
+    /* 3. CHALLENGES */
+    /* ========================= */
+    .section-challenges { background: var(--cream); padding: 7rem 0; }
+    .challenges-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .challenge-card { position: relative; overflow: hidden; padding-top: 3rem; }
+    .challenge-number {
+      position: absolute; top: -0.75rem; left: -0.25rem;
+      font-family: var(--font-serif); font-size: 5rem; font-weight: 700;
+      color: rgba(201,169,110,.1); line-height: 1; pointer-events: none;
+    }
+    .challenge-label {
+      font-family: var(--font-serif); font-size: 0.875rem;
+      font-weight: 600; color: var(--gold); margin-bottom: 0.75rem;
+    }
+
+    @media (max-width: 1024px) { .challenges-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .challenges-grid { grid-template-columns: 1fr; } }
+
+    /* ========================= */
+    /* 4. SOLUTION */
+    /* ========================= */
+    .section-solution {
+      background: var(--dark); padding: 7rem 0;
+      position: relative; overflow: hidden;
+    }
+    .section-solution .section-title { color: #fff; }
+    .solution-glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+      opacity: 0.04;
+    }
+    .mockup-container {
+      display: flex; align-items: flex-end;
+      justify-content: center; gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .browser-mockup {
+      width: 75%; max-width: 60rem;
+      border-radius: 1rem; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(58,58,58,.5);
+      box-shadow: 0 25px 50px rgba(0,0,0,.4);
+    }
+    .browser-bar {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 1.25rem;
+      background: #2a2a2a; border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .browser-dot { width: 0.75rem; height: 0.75rem; border-radius: 50%; }
+    .browser-dot.red { background: #FF5F56; }
+    .browser-dot.yellow { background: #FFBD2E; }
+    .browser-dot.green { background: #27C93F; }
+    .browser-url {
+      flex: 1; margin: 0 1.5rem;
+      background: rgba(26,26,26,.8); border-radius: 0.5rem;
+      padding: 0.375rem 1rem; max-width: 20rem; margin-left: auto; margin-right: auto;
+      text-align: center;
+    }
+    .browser-url span { font-size: 0.75rem; color: rgba(255,255,255,.5); }
+    .browser-screen { aspect-ratio: 16/10; overflow: hidden; }
+    .browser-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    .phone-mockup {
+      width: 220px; flex-shrink: 0; margin-bottom: -3rem;
+    }
+    .phone-frame {
+      border-radius: 2.5rem; border: 6px solid #2a2a2a;
+      overflow: hidden; background: var(--dark);
+      box-shadow: 0 25px 50px rgba(0,0,0,.5);
+    }
+    .phone-notch {
+      background: #2a2a2a; padding: 0.75rem 0 0.5rem;
+      display: flex; justify-content: center;
+    }
+    .phone-notch div { width: 6rem; height: 1.5rem; background: var(--dark); border-radius: 9999px; }
+    .phone-screen { aspect-ratio: 9/18; overflow: hidden; }
+    .phone-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .phone-home {
+      background: var(--dark); padding: 0.5rem; display: flex; justify-content: center;
+    }
+    .phone-home div { width: 7rem; height: 0.25rem; background: rgba(255,255,255,.2); border-radius: 9999px; }
+
+    .tech-pills {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      justify-content: center; margin-top: 3rem;
+    }
+    .pill {
+      background: var(--charcoal); border: 1px solid rgba(201,169,110,.3);
+      color: var(--gold); border-radius: 9999px;
+      padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .browser-mockup { width: 100%; }
+      .phone-mockup { width: 180px; margin-bottom: 0; }
+      .mockup-container { gap: 2rem; }
+    }
+
+    /* ========================= */
+    /* 5. USER JOURNEY */
+    /* ========================= */
+    .section-journey { background: var(--ivory); padding: 7rem 0; }
+    .journey-layout { display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; align-items: start; }
+    .timeline { position: relative; padding-left: 3rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 1.25rem; top: 0.5rem; bottom: 0.5rem;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-light), transparent);
+    }
+    .timeline-step {
+      position: relative; display: flex; align-items: flex-start; gap: 1.25rem;
+      padding: 1rem; border-radius: 0.75rem;
+      transition: background 0.3s ease;
+    }
+    .timeline-step:hover { background: rgba(255,255,255,.7); }
+    .step-icon {
+      position: relative; z-index: 2; flex-shrink: 0;
+      width: 2.5rem; height: 2.5rem; border-radius: 50%;
+      background: #fff; border: 2px solid rgba(201,169,110,.4);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,.06);
+      margin-left: -1.75rem;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .timeline-step:hover .step-icon { border-color: var(--gold); transform: scale(1.1); }
+    .step-icon i { width: 1rem; height: 1rem; color: var(--gold); }
+    .step-label {
+      font-size: 0.625rem; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.2em; color: rgba(201,169,110,.7); margin-bottom: 0.25rem;
+    }
+    .step-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--anthracite); margin-bottom: 0.25rem; }
+    .step-desc { font-size: 0.875rem; color: var(--taupe); line-height: 1.6; }
+
+    .journey-mockup {
+      position: sticky; top: 7rem;
+      border-radius: 1rem; overflow: hidden;
+      background: #fff; border: 1px solid rgba(232,221,211,.3);
+      box-shadow: 0 10px 50px rgba(0,0,0,.08);
+    }
+    .journey-mockup .mini-bar {
+      display: flex; align-items: center; gap: 0.375rem;
+      padding: 0.625rem 0.75rem; background: var(--cream);
+      border-bottom: 1px solid rgba(232,221,211,.3);
+    }
+    .journey-mockup .mini-dot { width: 0.625rem; height: 0.625rem; border-radius: 50%; }
+    .journey-mockup-url {
+      flex: 1; margin: 0 0.75rem;
+      background: var(--ivory); border-radius: 0.25rem;
+      padding: 0.125rem 0.5rem; max-width: 8rem; margin-left: auto; margin-right: auto;
+      text-align: center;
+    }
+    .journey-mockup-url span { font-size: 0.5625rem; color: rgba(184,169,154,.6); }
+    .journey-mockup img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; }
+
+    @media (max-width: 1024px) {
+      .journey-layout { grid-template-columns: 1fr; }
+      .journey-mockup { display: none; }
+    }
+
+    /* ========================= */
+    /* 6. FEATURES */
+    /* ========================= */
+    .section-features { background: var(--champagne-light); padding: 7rem 0; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .feature-icon {
+      width: 3rem; height: 3rem; border-radius: 0.75rem;
+      background: var(--champagne-light);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem; transition: transform 0.3s ease;
+    }
+    .card:hover .feature-icon { transform: scale(1.1); }
+    .feature-icon i { width: 1.25rem; height: 1.25rem; color: var(--gold); }
+
+    @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .features-grid { grid-template-columns: 1fr; } }
+
+    /* ========================= */
+    /* 7. QUOTE MOCKUP */
+    /* ========================= */
+    .section-quote { background: var(--ivory); padding: 7rem 0; }
+    .quote-card {
+      max-width: 48rem; margin: 0 auto;
+      background: #fff; border-radius: 1.5rem;
+      padding: 2.5rem;
+      border: 1px solid rgba(232,221,211,.5);
+      box-shadow: 0 10px 50px rgba(0,0,0,.08);
+    }
+    .progress-bar { height: 0.375rem; background: rgba(232,221,211,.4); border-radius: 9999px; margin-bottom: 2rem; }
+    .progress-fill {
+      height: 100%; border-radius: 9999px; width: 37.5%;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+    }
+    .progress-info { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .progress-info span { font-size: 0.75rem; font-weight: 500; color: var(--taupe); text-transform: uppercase; letter-spacing: 0.05em; }
+    .progress-info .pct { color: var(--gold); }
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 2rem; }
+    .option-card {
+      position: relative; border: 2px solid rgba(232,221,211,.6);
+      border-radius: 0.75rem; padding: 1rem 1.25rem;
+      text-align: center; font-size: 0.875rem; color: var(--taupe);
+      cursor: default; transition: all 0.2s ease;
+    }
+    .option-card.selected {
+      border-color: var(--gold);
+      background: rgba(250,240,230,.4);
+      color: var(--anthracite); font-weight: 500;
+    }
+    .option-check {
+      position: absolute; top: 0.625rem; right: 0.625rem;
+      width: 1rem; height: 1rem; border-radius: 50%;
+      background: var(--gold); display: flex; align-items: center; justify-content: center;
+    }
+    .option-check svg { width: 0.625rem; height: 0.625rem; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .form-buttons { display: flex; justify-content: space-between; align-items: center; }
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid var(--beige); border-radius: 9999px;
+      padding: 0.625rem 1.5rem; font-size: 0.875rem; color: var(--taupe);
+      background: transparent; cursor: default;
+    }
+    .btn-next {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); border: none; border-radius: 9999px;
+      padding: 0.625rem 1.5rem; font-size: 0.875rem; color: var(--dark);
+      font-weight: 500; cursor: default;
+    }
+    .step-dots { display: flex; gap: 0.5rem; justify-content: center; margin-top: 2rem; }
+    .step-dot { height: 0.5rem; border-radius: 9999px; }
+    .step-dot.active { width: 1.5rem; background: var(--gold); }
+    .step-dot.done { width: 0.5rem; background: rgba(201,169,110,.4); }
+    .step-dot.pending { width: 0.5rem; background: rgba(232,221,211,.6); }
+    .step-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 3rem; }
+    .step-badge {
+      background: var(--champagne-light); color: var(--bronze);
+      border-radius: 9999px; padding: 0.375rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 640px) {
+      .options-grid { grid-template-columns: 1fr; }
+      .quote-card { padding: 1.5rem; }
+    }
+
+    /* ========================= */
+    /* 8. PRE-BOOKING */
+    /* ========================= */
+    .section-prebooking { background: var(--cream); padding: 7rem 0; }
+    .prebooking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .benefit-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+    .benefit-icon { flex-shrink: 0; margin-top: 0.125rem; }
+    .benefit-icon i { width: 1.5rem; height: 1.5rem; color: var(--gold); }
+    .benefit-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--anthracite); margin-bottom: 0.25rem; }
+    .benefit-desc { font-size: 0.875rem; color: var(--taupe); line-height: 1.6; }
+
+    .calendar-card {
+      background: #fff; border-radius: 1rem; padding: 1.5rem 2rem;
+      border: 1px solid rgba(232,221,211,.5);
+      box-shadow: 0 10px 50px rgba(0,0,0,.08);
+    }
+    .cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+    .cal-header h4 { font-family: var(--font-serif); font-size: 1.1rem; color: var(--anthracite); }
+    .cal-nav {
+      width: 2rem; height: 2rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: transparent; border: none; color: var(--taupe); cursor: default;
+    }
+    .cal-nav i { width: 1rem; height: 1rem; }
+    .cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.25rem; margin-bottom: 0.5rem; }
+    .cal-weekday {
+      text-align: center; font-size: 0.6875rem; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em; color: rgba(184,169,154,.6);
+      padding: 0.25rem 0;
+    }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.25rem; }
+    .cal-day {
+      aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+      border-radius: 0.5rem; font-size: 0.875rem; cursor: default; transition: background 0.2s ease;
+    }
+    .cal-day.available { color: var(--anthracite); }
+    .cal-day.available:hover { background: rgba(250,240,230,.5); }
+    .cal-day.selected { background: var(--gold); color: var(--dark); font-weight: 600; box-shadow: 0 0 0 3px rgba(201,169,110,.3); }
+    .cal-day.option { background: #fef3c7; color: #b45309; }
+    .cal-day.reserved { background: rgba(58,58,58,.1); color: rgba(58,58,58,.4); text-decoration: line-through; }
+    .cal-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(232,221,211,.4); }
+    .legend-item { display: flex; align-items: center; gap: 0.375rem; }
+    .legend-dot { width: 0.625rem; height: 0.625rem; border-radius: 50%; }
+    .legend-dot.gold { background: var(--gold); }
+    .legend-dot.amber { background: #fef3c7; border: 1px solid #fcd34d; }
+    .legend-dot.gray { background: rgba(58,58,58,.2); }
+    .legend-item span { font-size: 0.6875rem; color: var(--taupe); }
+    .cal-cta {
+      margin-top: 1.25rem; width: 100%;
+      background: var(--gold); color: var(--dark);
+      border: none; border-radius: 9999px;
+      padding: 0.75rem; font-size: 0.875rem; font-weight: 500;
+      cursor: default;
+    }
+
+    @media (max-width: 1024px) { .prebooking-grid { grid-template-columns: 1fr; } }
+
+    /* ========================= */
+    /* 9. WHY DIFFERENCE (dark) */
+    /* ========================= */
+    .section-why { background: var(--dark); padding: 7rem 0; }
+    .section-why .section-title { color: #fff; }
+    .why-block {
+      display: flex; align-items: center; gap: 2rem; padding: 2.5rem 0;
+    }
+    .why-block.reverse { flex-direction: row-reverse; }
+    .why-block.reverse .why-text { text-align: right; }
+    .why-icon-circle {
+      flex-shrink: 0; width: 4rem; height: 4rem; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .why-icon-circle i { width: 1.75rem; height: 1.75rem; color: var(--dark); }
+    .why-title { font-family: var(--font-serif); font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; }
+    .why-desc { font-size: 0.875rem; color: var(--taupe); line-height: 1.7; max-width: 36rem; }
+    .why-divider {
+      height: 1px; background: linear-gradient(to right, transparent, rgba(201,169,110,.25), transparent);
+    }
+
+    @media (max-width: 640px) {
+      .why-block, .why-block.reverse { flex-direction: column; text-align: center; }
+      .why-block.reverse .why-text { text-align: center; }
+    }
+
+    /* ========================= */
+    /* 10. IMPACT */
+    /* ========================= */
+    .section-impact { background: var(--ivory); padding: 7rem 0; }
+    .impact-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .impact-card { text-align: center; }
+    .impact-icon {
+      width: 4rem; height: 4rem; border-radius: 50%;
+      background: var(--champagne-light);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    .impact-icon i { width: 1.75rem; height: 1.75rem; color: var(--gold); }
+    .impact-metric { font-family: var(--font-serif); font-size: 1.5rem; color: var(--dark); margin-bottom: 0.75rem; }
+    .impact-desc { font-size: 0.875rem; color: var(--taupe); line-height: 1.6; }
+
+    @media (max-width: 1024px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .impact-grid { grid-template-columns: 1fr; } }
+
+    /* ========================= */
+    /* 11. CONCLUSION CTA */
+    /* ========================= */
+    .section-cta {
+      position: relative; min-height: 70vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute; inset: 0;
+      background: url('images/clearpix_1772783592605.png') center/cover no-repeat;
+    }
+    .cta-overlay { position: absolute; inset: 0; background: rgba(26,26,26,.7); }
+    .cta-content { position: relative; z-index: 10; text-align: center; padding: 7rem 1.5rem; max-width: 56rem; margin: 0 auto; }
+    .cta-content .section-title { color: #fff; font-size: clamp(1.75rem, 4vw, 3.5rem); }
+    .cta-desc { font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--beige); max-width: 40rem; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ========================= */
+    /* FOOTER */
+    /* ========================= */
+    .site-footer { background: var(--dark); padding: 2.5rem 0; text-align: center; }
+    .site-footer p { font-size: 0.875rem; color: rgba(232,221,211,.6); }
+    .site-footer a {
+      display: inline-block; margin-top: 0.75rem;
+      font-size: 0.75rem; color: var(--gold); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .site-footer a:hover { color: var(--gold-light); }
+
+    /* Text helpers */
+    .text-center { text-align: center; }
+    .text-taupe { color: var(--taupe); }
+    .text-gold { color: var(--gold); }
+    .text-white { color: #fff; }
+    .text-beige { color: var(--beige); }
+    .mb-20 { margin-bottom: 5rem; }
+    .max-w-2xl { max-width: 42rem; margin-left: auto; margin-right: auto; }
+    .max-w-4xl { max-width: 56rem; margin-left: auto; margin-right: auto; }
+    .leading-relaxed { line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#" class="header-logo">L'Art d'Oise</a>
+    <nav class="header-nav">
+      <a href="#projet">Projet</a>
+      <a href="#solution">Solution</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#impact">Impact</a>
+    </nav>
+    <a href="#contact" class="header-cta">Contact</a>
+  </div>
+</header>
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-label reveal">Présentation Projet</div>
+
+  <div class="hero-content">
+    <div class="hero-line reveal stagger-1"></div>
+    <h1>
+      <span class="main-title reveal stagger-2">Art d'Oise</span>
+      <span class="sub-title reveal stagger-3">Une expérience digitale à la hauteur<br>de vos réceptions d'exception</span>
+    </h1>
+    <p class="hero-desc reveal stagger-4">Conception et développement d'un site vitrine premium pour sublimer l'un des lieux de réception les plus prestigieux de l'Oise</p>
+    <div class="hero-buttons reveal stagger-5">
+      <a href="#projet" class="btn-primary">Découvrir le projet</a>
+      <a href="https://salle-artdoise.vercel.app" target="_blank" rel="noopener" class="btn-outline">Voir le site en ligne</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <i data-lucide="chevron-down" style="width:1.25rem;height:1.25rem"></i>
+  </div>
+</section>
+
+<!-- 2. VISION & CONTEXTE -->
+<section class="section-vision" id="projet">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Vision &amp; Contexte</span>
+      <h2 class="section-title reveal stagger-1">Sublimer le digital à la hauteur du lieu</h2>
+      <div class="section-divider reveal stagger-2"></div>
+      <p class="reveal stagger-3 max-w-2xl leading-relaxed text-taupe" style="margin-top:2rem">
+        L'Art d'Oise est un lieu de réception d'exception dont le prestige réel méritait une présence digitale à la mesure de son standing. Le défi : concevoir un site qui soit à la fois une vitrine émotionnelle et un outil de conversion performant.
+      </p>
+    </div>
+
+    <div class="vision-grid">
+      <div class="card reveal stagger-1">
+        <div class="icon-circle"><i data-lucide="sparkles"></i></div>
+        <h3 class="font-serif" style="font-size:1.25rem;margin:1.25rem 0 0.75rem">Image de marque</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Refléter en ligne le standing et l'élégance du lieu pour créer une première impression mémorable.</p>
+      </div>
+      <div class="card reveal stagger-2">
+        <div class="icon-circle"><i data-lucide="target"></i></div>
+        <h3 class="font-serif" style="font-size:1.25rem;margin:1.25rem 0 0.75rem">Conversion</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Transformer chaque visiteur en demande de devis qualifiée grâce à un parcours pensé pour convertir.</p>
+      </div>
+      <div class="card reveal stagger-3">
+        <div class="icon-circle"><i data-lucide="shield"></i></div>
+        <h3 class="font-serif" style="font-size:1.25rem;margin:1.25rem 0 0.75rem">Réassurance</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Inspirer confiance immédiatement avec des témoignages, des visuels immersifs et une navigation fluide.</p>
+      </div>
+      <div class="card reveal stagger-4">
+        <div class="icon-circle"><i data-lucide="heart"></i></div>
+        <h3 class="font-serif" style="font-size:1.25rem;margin:1.25rem 0 0.75rem">Expérience</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Offrir une expérience digitale émotionnelle qui donne envie de visiter et de réserver.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ENJEUX STRATÉGIQUES -->
+<section class="section-challenges">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Enjeux Stratégiques</span>
+      <h2 class="section-title reveal stagger-1">Les défis d'une présence digitale premium</h2>
+      <div class="section-divider reveal stagger-2"></div>
+    </div>
+
+    <div class="challenges-grid">
+      <div class="card challenge-card reveal stagger-1">
+        <span class="challenge-number">01</span>
+        <span class="challenge-label">01</span>
+        <h3 class="font-serif" style="font-size:1.25rem;margin-bottom:0.75rem">Prestige digital</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Refléter fidèlement le prestige et la qualité réelle de la salle dans l'espace numérique</p>
+      </div>
+      <div class="card challenge-card reveal stagger-2">
+        <span class="challenge-number">02</span>
+        <span class="challenge-label">02</span>
+        <h3 class="font-serif" style="font-size:1.25rem;margin-bottom:0.75rem">Première impression</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Inspirer confiance et émotion dès les premières secondes de navigation sur le site</p>
+      </div>
+      <div class="card challenge-card reveal stagger-3">
+        <span class="challenge-number">03</span>
+        <span class="challenge-label">03</span>
+        <h3 class="font-serif" style="font-size:1.25rem;margin-bottom:0.75rem">Simplification devis</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Rendre la demande de devis intuitive, rapide et sans friction pour maximiser les conversions</p>
+      </div>
+      <div class="card challenge-card reveal stagger-4">
+        <span class="challenge-number">04</span>
+        <span class="challenge-label">04</span>
+        <h3 class="font-serif" style="font-size:1.25rem;margin-bottom:0.75rem">Pré-réservation fluide</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Permettre aux clients de pré-réserver facilement et de se projeter dans leur événement</p>
+      </div>
+      <div class="card challenge-card reveal stagger-5">
+        <span class="challenge-number">05</span>
+        <span class="challenge-label">05</span>
+        <h3 class="font-serif" style="font-size:1.25rem;margin-bottom:0.75rem">Envie de visite</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Créer une envie irrésistible de découvrir le lieu en personne grâce au storytelling visuel</p>
+      </div>
+      <div class="card challenge-card reveal stagger-6">
+        <span class="challenge-number">06</span>
+        <span class="challenge-label">06</span>
+        <h3 class="font-serif" style="font-size:1.25rem;margin-bottom:0.75rem">Leads qualifiés</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Augmenter significativement le volume de demandes qualifiées et pertinentes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SOLUTION DIGITALE -->
+<section class="section-solution" id="solution">
+  <div class="solution-glow" aria-hidden="true"></div>
+  <div class="container" style="position:relative">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Solution digitale</span>
+      <h2 class="section-title reveal stagger-1">Un site vitrine pensé pour l'excellence</h2>
+      <p class="reveal stagger-2 max-w-2xl leading-relaxed text-beige" style="margin-top:1.5rem">
+        Une plateforme sur-mesure alliant esthétique premium, parcours de conversion optimisé et storytelling émotionnel.
+      </p>
+    </div>
+
+    <div class="mockup-container reveal stagger-3 from-scale">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <span class="browser-dot red"></span>
+          <span class="browser-dot yellow"></span>
+          <span class="browser-dot green"></span>
+          <div class="browser-url"><span>artdoise.fr</span></div>
+        </div>
+        <div class="browser-screen">
+          <img src="screenshots/mockup-hero.png" alt="Site Art d'Oise — version desktop">
+        </div>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-notch"><div></div></div>
+          <div class="phone-screen">
+            <img src="screenshots/mockup-mobile-hero.png" alt="Site Art d'Oise — version mobile">
+          </div>
+          <div class="phone-home"><div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-pills reveal stagger-4">
+      <span class="pill">Next.js &amp; React</span>
+      <span class="pill">Design sur-mesure</span>
+      <span class="pill">Responsive Premium</span>
+      <span class="pill">Animations fluides</span>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PARCOURS UTILISATEUR -->
+<section class="section-journey">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Parcours utilisateur</span>
+      <h2 class="section-title reveal stagger-1">Un parcours pensé pour convertir</h2>
+      <p class="reveal stagger-2 max-w-2xl leading-relaxed text-taupe" style="margin-top:1.5rem">
+        Chaque étape du parcours a été conçue pour guider naturellement le visiteur vers la prise de contact.
+      </p>
+    </div>
+
+    <div class="journey-layout">
+      <div class="timeline">
+        <div class="timeline-step reveal from-left stagger-1">
+          <div class="step-icon"><i data-lucide="eye"></i></div>
+          <div>
+            <div class="step-label">Étape 1</div>
+            <div class="step-title">Découverte</div>
+            <div class="step-desc">Le visiteur arrive sur le site et découvre immédiatement le standing du lieu</div>
+          </div>
+        </div>
+        <div class="timeline-step reveal from-left stagger-2">
+          <div class="step-icon"><i data-lucide="heart"></i></div>
+          <div>
+            <div class="step-label">Étape 2</div>
+            <div class="step-title">Projection</div>
+            <div class="step-desc">Les visuels immersifs et le storytelling créent une connexion émotionnelle</div>
+          </div>
+        </div>
+        <div class="timeline-step reveal from-left stagger-3">
+          <div class="step-icon"><i data-lucide="layout"></i></div>
+          <div>
+            <div class="step-label">Étape 3</div>
+            <div class="step-title">Consultation</div>
+            <div class="step-desc">L'exploration des espaces, capacités et prestations renforce l'intérêt</div>
+          </div>
+        </div>
+        <div class="timeline-step reveal from-left stagger-4">
+          <div class="step-icon"><i data-lucide="shield"></i></div>
+          <div>
+            <div class="step-label">Étape 4</div>
+            <div class="step-title">Réassurance</div>
+            <div class="step-desc">Témoignages, chiffres clés et FAQ lèvent les dernières objections</div>
+          </div>
+        </div>
+        <div class="timeline-step reveal from-left stagger-5">
+          <div class="step-icon"><i data-lucide="file-text"></i></div>
+          <div>
+            <div class="step-label">Étape 5</div>
+            <div class="step-title">Demande de devis</div>
+            <div class="step-desc">Le formulaire intelligent en 8 étapes simplifie la demande</div>
+          </div>
+        </div>
+        <div class="timeline-step reveal from-left stagger-6">
+          <div class="step-icon"><i data-lucide="calendar"></i></div>
+          <div>
+            <div class="step-label">Étape 6</div>
+            <div class="step-title">Pré-réservation</div>
+            <div class="step-desc">Le système de pré-réservation permet de bloquer une date facilement</div>
+          </div>
+        </div>
+        <div class="timeline-step reveal from-left stagger-7">
+          <div class="step-icon"><i data-lucide="phone"></i></div>
+          <div>
+            <div class="step-label">Étape 7</div>
+            <div class="step-title">Contact</div>
+            <div class="step-desc">L'accompagnement humain prend le relais pour finaliser</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-mockup reveal from-right stagger-3">
+        <div class="mini-bar">
+          <span class="mini-dot browser-dot red"></span>
+          <span class="mini-dot browser-dot yellow"></span>
+          <span class="mini-dot browser-dot green"></span>
+          <div class="journey-mockup-url"><span>artdoise.fr</span></div>
+        </div>
+        <img src="screenshots/mockup-espaces.png" alt="Section Espaces du site">
+        <div class="text-center" style="padding:0.75rem 0">
+          <span style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(184,169,154,.7);font-weight:500">Section Espaces</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FONCTIONNALITÉS CLÉS -->
+<section class="section-features" id="fonctionnalites">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Fonctionnalités clés</span>
+      <h2 class="section-title reveal stagger-1">Chaque détail au service de la conversion</h2>
+      <div class="section-divider reveal stagger-2"></div>
+    </div>
+
+    <div class="features-grid">
+      <div class="card reveal stagger-1">
+        <div class="feature-icon"><i data-lucide="images"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Galerie immersive</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Navigation fluide entre les photos avec filtres par catégorie et lightbox plein écran</p>
+      </div>
+      <div class="card reveal stagger-2">
+        <div class="feature-icon"><i data-lucide="building"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Présentation des espaces</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Chaque espace détaillé avec surface, capacité et usages pour aider à la projection</p>
+      </div>
+      <div class="card reveal stagger-3">
+        <div class="feature-icon"><i data-lucide="file-text"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Devis intelligent</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Formulaire multi-étapes guidé qui qualifie la demande en moins de 2 minutes</p>
+      </div>
+      <div class="card reveal stagger-4">
+        <div class="feature-icon"><i data-lucide="calendar"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Pré-réservation</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Système intuitif permettant de bloquer une date et d'initier le processus</p>
+      </div>
+      <div class="card reveal stagger-5">
+        <div class="feature-icon"><i data-lucide="users"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Capacités détaillées</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Informations claires sur les capacités d'accueil de chaque configuration</p>
+      </div>
+      <div class="card reveal stagger-6">
+        <div class="feature-icon"><i data-lucide="map-pin"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Informations pratiques</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Accès, localisation et détails logistiques présentés de manière claire</p>
+      </div>
+      <div class="card reveal stagger-7">
+        <div class="feature-icon"><i data-lucide="star"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Réassurance client</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Témoignages vérifiés, chiffres clés et FAQ pour lever toutes les objections</p>
+      </div>
+      <div class="card reveal stagger-8">
+        <div class="feature-icon"><i data-lucide="message-circle"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Contact rapide</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Multiple points de contact accessibles à tout moment de la navigation</p>
+      </div>
+      <div class="card reveal stagger-9">
+        <div class="feature-icon"><i data-lucide="smartphone"></i></div>
+        <h3 class="font-serif" style="font-size:1.1rem;margin-bottom:0.5rem">Mobile premium</h3>
+        <p class="text-taupe" style="font-size:0.875rem;line-height:1.7">Expérience optimisée sur mobile avec un design adapté et des performances natives</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. DEVIS INTELLIGENT -->
+<section class="section-quote">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Devis intelligent</span>
+      <h2 class="section-title reveal stagger-1">Un formulaire pensé pour convertir</h2>
+      <div class="section-divider reveal stagger-2" style="margin-bottom:2rem"></div>
+      <p class="reveal stagger-3 max-w-2xl leading-relaxed text-taupe">En seulement 8 étapes intuitives, le visiteur qualifie sa demande sans effort.</p>
+    </div>
+
+    <div class="quote-card reveal stagger-4 from-scale">
+      <div class="progress-info">
+        <span>Étape 3 sur 8</span>
+        <span class="pct">37%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+
+      <h3 class="font-serif" style="font-size:1.5rem;margin-bottom:1.5rem">Type d'événement</h3>
+
+      <div class="options-grid">
+        <div class="option-card selected">
+          <div class="option-check"><svg viewBox="0 0 12 12"><polyline points="2.5 6 5 8.5 9.5 3.5"/></svg></div>
+          Mariage
+        </div>
+        <div class="option-card">Réception privée</div>
+        <div class="option-card">Événement corporate</div>
+        <div class="option-card">Anniversaire</div>
+      </div>
+
+      <div class="form-buttons">
+        <button class="btn-back"><i data-lucide="chevron-left" style="width:1rem;height:1rem"></i> Précédent</button>
+        <button class="btn-next">Suivant <i data-lucide="chevron-right" style="width:1rem;height:1rem"></i></button>
+      </div>
+
+      <div class="step-dots">
+        <div class="step-dot done"></div>
+        <div class="step-dot done"></div>
+        <div class="step-dot active"></div>
+        <div class="step-dot pending"></div>
+        <div class="step-dot pending"></div>
+        <div class="step-dot pending"></div>
+        <div class="step-dot pending"></div>
+        <div class="step-dot pending"></div>
+      </div>
+    </div>
+
+    <div class="step-badges reveal stagger-5">
+      <span class="step-badge">Type d'événement</span>
+      <span class="step-badge">Nombre d'invités</span>
+      <span class="step-badge">Date souhaitée</span>
+      <span class="step-badge">Besoins spécifiques</span>
+      <span class="step-badge">Budget indicatif</span>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PRÉ-RÉSERVATION -->
+<section class="section-prebooking">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Pré-réservation</span>
+      <h2 class="section-title reveal stagger-1">Réserver n'a jamais été aussi simple</h2>
+      <div class="section-divider reveal stagger-2"></div>
+    </div>
+
+    <div class="prebooking-grid">
+      <div class="reveal from-left">
+        <p class="text-taupe leading-relaxed" style="font-size:1.05rem;margin-bottom:2.5rem">
+          Le système de pré-réservation permet aux futurs clients de bloquer une date en quelques clics, sans engagement ferme. Une approche rassurante qui favorise le passage à l'action.
+        </p>
+
+        <div class="benefit-item reveal stagger-1">
+          <div class="benefit-icon"><i data-lucide="check-circle-2"></i></div>
+          <div>
+            <div class="benefit-title">Simplicité</div>
+            <div class="benefit-desc">Un processus en 3 étapes, sans création de compte ni formulaire complexe</div>
+          </div>
+        </div>
+        <div class="benefit-item reveal stagger-2">
+          <div class="benefit-icon"><i data-lucide="check-circle-2"></i></div>
+          <div>
+            <div class="benefit-title">Rapidité</div>
+            <div class="benefit-desc">Moins de 2 minutes pour soumettre une demande de pré-réservation complète</div>
+          </div>
+        </div>
+        <div class="benefit-item reveal stagger-3">
+          <div class="benefit-icon"><i data-lucide="check-circle-2"></i></div>
+          <div>
+            <div class="benefit-title">Accompagnement humain</div>
+            <div class="benefit-desc">Chaque demande est suivie d'un appel personnalisé sous 24h</div>
+          </div>
+        </div>
+        <div class="benefit-item reveal stagger-4">
+          <div class="benefit-icon"><i data-lucide="check-circle-2"></i></div>
+          <div>
+            <div class="benefit-title">Sans friction</div>
+            <div class="benefit-desc">Aucun engagement ferme : le client se sent libre et en confiance</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calendar-card reveal from-right stagger-2">
+        <div class="cal-header">
+          <button class="cal-nav"><i data-lucide="chevron-left"></i></button>
+          <h4>Mars 2026</h4>
+          <button class="cal-nav"><i data-lucide="chevron-right"></i></button>
+        </div>
+        <div class="cal-weekdays">
+          <div class="cal-weekday">Lun</div><div class="cal-weekday">Mar</div><div class="cal-weekday">Mer</div>
+          <div class="cal-weekday">Jeu</div><div class="cal-weekday">Ven</div><div class="cal-weekday">Sam</div><div class="cal-weekday">Dim</div>
+        </div>
+        <div class="cal-grid">
+          <div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day available">1</div>
+          <div class="cal-day available">2</div><div class="cal-day available">3</div><div class="cal-day available">4</div><div class="cal-day available">5</div><div class="cal-day available">6</div><div class="cal-day reserved">7</div><div class="cal-day available">8</div>
+          <div class="cal-day available">9</div><div class="cal-day available">10</div><div class="cal-day available">11</div><div class="cal-day available">12</div><div class="cal-day available">13</div><div class="cal-day option">14</div><div class="cal-day available">15</div>
+          <div class="cal-day available">16</div><div class="cal-day available">17</div><div class="cal-day available">18</div><div class="cal-day available">19</div><div class="cal-day available">20</div><div class="cal-day selected">21</div><div class="cal-day available">22</div>
+          <div class="cal-day available">23</div><div class="cal-day available">24</div><div class="cal-day available">25</div><div class="cal-day option">26</div><div class="cal-day available">27</div><div class="cal-day reserved">28</div><div class="cal-day available">29</div>
+          <div class="cal-day available">30</div><div class="cal-day available">31</div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div>
+        </div>
+        <div class="cal-legend">
+          <div class="legend-item"><div class="legend-dot gold"></div><span>Sélectionné</span></div>
+          <div class="legend-item"><div class="legend-dot amber"></div><span>En option</span></div>
+          <div class="legend-item"><div class="legend-dot gray"></div><span>Réservé</span></div>
+        </div>
+        <button class="cal-cta">Pré-réserver cette date</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. POURQUOI CE SITE -->
+<section class="section-why">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Impact</span>
+      <h2 class="section-title reveal stagger-1">Pourquoi ce site fera la différence</h2>
+      <div class="reveal stagger-2" style="width:4rem;height:1px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
+    </div>
+
+    <div class="max-w-4xl">
+      <div class="why-block reveal stagger-1">
+        <div class="why-icon-circle"><i data-lucide="trending-up"></i></div>
+        <div class="why-text">
+          <div class="why-title">Désirabilité renforcée</div>
+          <div class="why-desc">Un design premium qui sublime chaque espace et crée un désir immédiat de découvrir le lieu en personne.</div>
+        </div>
+      </div>
+      <div class="why-divider reveal"></div>
+
+      <div class="why-block reverse reveal stagger-2">
+        <div class="why-icon-circle"><i data-lucide="award"></i></div>
+        <div class="why-text">
+          <div class="why-title">Crédibilité instantanée</div>
+          <div class="why-desc">Une première impression digitale à la hauteur du standing réel de la salle, qui inspire confiance dès le premier regard.</div>
+        </div>
+      </div>
+      <div class="why-divider reveal"></div>
+
+      <div class="why-block reveal stagger-3">
+        <div class="why-icon-circle"><i data-lucide="bar-chart-3"></i></div>
+        <div class="why-text">
+          <div class="why-title">Conversion optimisée</div>
+          <div class="why-desc">Un parcours utilisateur pensé pour guider chaque visiteur vers la demande de devis, avec un taux de conversion maximisé.</div>
+        </div>
+      </div>
+      <div class="why-divider reveal"></div>
+
+      <div class="why-block reverse reveal stagger-4">
+        <div class="why-icon-circle"><i data-lucide="layers"></i></div>
+        <div class="why-text">
+          <div class="why-title">Cohérence de marque</div>
+          <div class="why-desc">L'expérience en ligne s'aligne parfaitement avec l'expérience physique, renforçant l'identité premium d'Art d'Oise.</div>
+        </div>
+      </div>
+      <div class="why-divider reveal"></div>
+
+      <div class="why-block reveal stagger-5">
+        <div class="why-icon-circle"><i data-lucide="zap"></i></div>
+        <div class="why-text">
+          <div class="why-title">Leads qualifiés</div>
+          <div class="why-desc">Le formulaire intelligent filtre et qualifie les demandes, permettant de se concentrer sur les prospects les plus pertinents.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. RÉSULTATS ATTENDUS -->
+<section class="section-impact" id="impact">
+  <div class="container">
+    <div class="text-center mb-20">
+      <span class="overtitle reveal">Résultats attendus</span>
+      <h2 class="section-title reveal stagger-1">Un investissement aux retombées mesurables</h2>
+      <div class="section-divider reveal stagger-2"></div>
+    </div>
+
+    <div class="impact-grid">
+      <div class="card impact-card reveal stagger-1">
+        <div class="impact-icon"><i data-lucide="crown"></i></div>
+        <div class="impact-metric">Image premium</div>
+        <div class="impact-desc">Une identité digitale qui reflète enfin le standing réel du lieu</div>
+      </div>
+      <div class="card impact-card reveal stagger-2">
+        <div class="impact-icon"><i data-lucide="route"></i></div>
+        <div class="impact-metric">Parcours fluide</div>
+        <div class="impact-desc">Un tunnel de conversion optimisé pour chaque profil de visiteur</div>
+      </div>
+      <div class="card impact-card reveal stagger-3">
+        <div class="impact-icon"><i data-lucide="trending-up"></i></div>
+        <div class="impact-metric">+40%</div>
+        <div class="impact-desc">Augmentation estimée des demandes de devis qualifiées</div>
+      </div>
+      <div class="card impact-card reveal stagger-4">
+        <div class="impact-icon"><i data-lucide="file-check"></i></div>
+        <div class="impact-metric">2x plus</div>
+        <div class="impact-desc">De demandes de devis grâce au formulaire intelligent</div>
+      </div>
+      <div class="card impact-card reveal stagger-5">
+        <div class="impact-icon"><i data-lucide="smile"></i></div>
+        <div class="impact-metric">Expérience client</div>
+        <div class="impact-desc">Une navigation premium qui renforce la satisfaction et la confiance</div>
+      </div>
+      <div class="card impact-card reveal stagger-6">
+        <div class="impact-icon"><i data-lucide="eye"></i></div>
+        <div class="impact-metric">Projection émotionnelle</div>
+        <div class="impact-desc">Le visiteur se projette dans son événement avant même de visiter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. CONCLUSION CTA -->
+<section class="section-cta" id="contact">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="cta-overlay" aria-hidden="true"></div>
+  <div class="cta-content">
+    <span class="overtitle reveal">Prêt à démarrer ?</span>
+    <h2 class="section-title reveal stagger-1">Donnons vie à l'expérience digitale que mérite Art d'Oise</h2>
+    <p class="cta-desc reveal stagger-2">Un projet pensé avec exigence, conçu pour durer et transformer chaque visite en opportunité.</p>
+    <div class="cta-buttons reveal stagger-3">
+      <a href="#" class="btn-primary">Démarrer le projet</a>
+      <a href="#" class="btn-outline">Planifier un échange</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>&copy; 2026 BF Studio &mdash; Projet Art d'Oise</p>
+  <a href="https://salle-artdoise.vercel.app" target="_blank" rel="noopener">Voir le site &#8599;</a>
+</footer>
+
+<script>
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  // Header scroll effect
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '-50px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -100,6 +100,12 @@ export function HeroSection() {
           >
             Découvrir le lieu
           </a>
+          <a
+            href="/presentation"
+            className="inline-flex items-center justify-center rounded-full border border-gold/50 bg-gold/10 px-8 py-4 font-sans font-medium text-gold-light transition-all duration-300 hover:bg-gold/20 hover:border-gold"
+          >
+            Voir la présentation
+          </a>
         </motion.div>
 
         {/* Trust badges */}

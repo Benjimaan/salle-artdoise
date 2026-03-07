@@ -56,6 +56,17 @@ export default function Header() {
           {/* Desktop CTAs */}
           <div className="hidden items-center gap-3 lg:flex">
             <a
+              href="/presentation"
+              className={cn(
+                "rounded-full border px-5 py-2 font-sans text-xs uppercase tracking-widest transition-all duration-300",
+                scrolled
+                  ? "border-gold/40 text-gold hover:border-gold hover:bg-gold/5"
+                  : "border-gold/40 text-gold-light hover:border-gold hover:bg-gold/10"
+              )}
+            >
+              Présentation
+            </a>
+            <a
               href="#devis"
               className={cn(
                 "rounded-full border px-5 py-2 font-sans text-xs uppercase tracking-widest transition-all duration-300",
@@ -124,6 +135,13 @@ export default function Header() {
 
               {/* Mobile CTAs */}
               <div className="mt-8 flex flex-col items-center gap-4">
+                <a
+                  href="/presentation"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-full border border-gold/40 px-8 py-3 font-sans text-sm uppercase tracking-widest text-gold transition-all duration-300 hover:border-gold hover:bg-gold/10"
+                >
+                  Présentation
+                </a>
                 <a
                   href="#devis"
                   onClick={() => setMobileOpen(false)}
