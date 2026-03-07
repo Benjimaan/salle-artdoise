@@ -43,18 +43,6 @@ export default function HeroPresentation() {
       {/* Dark Overlay */}
       <div className="hero-overlay absolute inset-0" aria-hidden="true" />
 
-      {/* Top Label */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-        className="absolute top-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <span className="text-xs font-sans font-medium uppercase tracking-[0.3em] text-gold">
-          Présentation Projet
-        </span>
-      </motion.div>
-
       {/* Content */}
       <motion.div
         variants={containerVariants}
@@ -62,6 +50,14 @@ export default function HeroPresentation() {
         animate="visible"
         className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl"
       >
+        {/* Label */}
+        <motion.span
+          variants={childVariants}
+          className="text-xs font-sans font-medium uppercase tracking-[0.3em] text-gold mb-6"
+        >
+          Présentation Projet
+        </motion.span>
+
         {/* Gold decorative line */}
         <motion.div
           variants={childVariants}
